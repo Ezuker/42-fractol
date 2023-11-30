@@ -15,20 +15,20 @@ LIBS	= ./MLX/build/libmlx42.a -ldl -lglfw -pthread -lm
 all: ${NAME}
 
 %.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
 $(NAME): $(OBJ)
-	make -C $(PRINTF)
-	mv $(PRINTF)/libftprintf.a .
-	$(CC) $(OBJ) $(LIBS) $(HEADERS) libftprintf.a -o $(NAME)
+	@make -C $(PRINTF)
+	@mv $(PRINTF)/libftprintf.a .
+	@$(CC) $(OBJ) $(LIBS) $(HEADERS) libftprintf.a -o $(NAME)
 
 clean:
-	make clean -C $(PRINTF)
-	$(RM) $(OBJ)
+	@make clean -C $(PRINTF)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	make fclean -C $(PRINTF)
-	$(RM) $(NAME) libftprintf.a
+	@make fclean -C $(PRINTF)
+	@$(RM) $(NAME) libftprintf.a
 
 re: fclean all
 

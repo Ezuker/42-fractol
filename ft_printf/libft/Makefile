@@ -57,24 +57,20 @@ NAME = libft.a
 all: ${NAME}
 
 bonus: ${OBJ} ${BOBJ} libft.h
-	${AR} ${NAME} ${OBJ} ${BOBJ}
+	@${AR} ${NAME} ${OBJ} ${BOBJ}
 
 %.o: %.c
-	$(CC) ${CFLAGS} -c $< -o $@
+	@$(CC) ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJ} libft.h
-	${AR} $@ $^
+	@${AR} $@ $^
 
 clean:
-	${RM} ${OBJ} ${BOBJ}
+	@${RM} ${OBJ} ${BOBJ}
 
 fclean: clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 
 re: fclean all bonus
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
 
 .PHONY : all clean fclean re bonus

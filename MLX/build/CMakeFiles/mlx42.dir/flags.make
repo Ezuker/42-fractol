@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/nfs/homes/bcarolle/bcarolle/in_progress_common_core/fractol/MLX/include
+C_INCLUDES = -I/home/benoit/work/42-fractol/MLX/include
 
 C_FLAGS = -fPIC   -D LODEPNG_NO_COMPILE_ENCODER -D LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS -D NDEBUG -Wextra -Wall -Werror -Wunreachable-code -Wno-char-subscripts -Wno-sign-compare -Wno-unused-parameter -Wno-missing-field-initializers -Ofast -std=c11
 
