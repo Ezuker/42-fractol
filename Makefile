@@ -1,5 +1,7 @@
 SRC = \
-	fractol.c \
+	main.c \
+	mandelbrot.c \
+	complex.c \
 
 OBJ = ${SRC:.c=.o}
 CC = cc
